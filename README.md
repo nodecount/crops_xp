@@ -20,7 +20,7 @@ Doc :
 Go to https://fabricmc.net/develop/template/ and enter :    
 - crops xp
 - nodecount.crops_xp
-- 1.21.1
+- 1.21.5
 
 Official example :    
 - https://github.com/FabricMC/fabric-example-mod/
