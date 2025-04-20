@@ -25,6 +25,9 @@ Go to https://fabricmc.net/develop/template/ and enter :
 Official example :    
 - https://github.com/FabricMC/fabric-example-mod/
 
+If you only want to watch the recommended versions of Fabric Loader, Yarn and Fabric API for the `gradle.properties` file corresponding to a Minecraft version :    
+- https://fabricmc.net/develop/
+
 ### Modifying the template
 
 Modify the project's `gradle.properties` file to change the `maven_group` and `archive_base_name` properties to match your mod's details.
