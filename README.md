@@ -20,10 +20,13 @@ Doc :
 Go to https://fabricmc.net/develop/template/ and enter :    
 - crops xp
 - nodecount.crops_xp
-- 1.21.1
+- 1.21.2
 
 Official example :    
 - https://github.com/FabricMC/fabric-example-mod/
+
+If you want just watch the recommended versions of Fabric Loader, Yarn and Fabric API for the gradle.propertites file corresponding to a Minecraft version :    
+- https://fabricmc.net/develop/
 
 ### Modifying the template
 
