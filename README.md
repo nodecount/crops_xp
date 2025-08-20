@@ -34,7 +34,7 @@ If you only want to watch the recommended versions of Fabric Loader, Yarn and Fa
 Go to https://files.minecraftforge.net/net/minecraftforge/forge/ :    
 - Click on version 1.21.8
 - Download on version 1.21.8
-- Click on `Mdk` in order to download the template
+- Click on `Mdk`
 
 ### Modifying the templates
 
