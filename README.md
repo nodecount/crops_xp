@@ -20,8 +20,8 @@ Doc :
 Go to https://fabricmc.net/develop/template/ and enter :    
 - crops xp
 - nodecount.crops_xp
-- 1.21.1
-- Click on `Download Template` in order to download the template
+- 1.20.1
+- Click on `Download Template`
 
 Official example :    
 - https://github.com/FabricMC/fabric-example-mod/
@@ -32,8 +32,8 @@ If you only want to watch the recommended versions of Fabric Loader, Yarn and Fa
 ### Get the Forge template
 
 Go to https://files.minecraftforge.net/net/minecraftforge/forge/ :    
-- Click on version 1.21.1
-- Download on version 1.21.1
+- Click on version 1.20.1
+- Download on version 1.20.1
 - Click on `Mdk` in order to download the template
 
 ### Modifying the templates
