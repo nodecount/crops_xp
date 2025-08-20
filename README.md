@@ -1,14 +1,14 @@
 # Crops XP Minecraft mod
 
-This Minecraft mod is running with the Fabric modloader.
+This Minecraft mod runs with the Fabric and Forge modloaders.
 
 ## About
 
-Allow you to gains XP while harvaseting mature crops.
+This mod allows you to gains XP when you harvest mature crops.
 
 It's a good alternative to kill monsters to win experience in Minecraft. Ideal for players that play in peaceful and also want to enchant their stuff.
 
-Works with other mod which integrate crops (farmer delight, ...)
+Works with other mods which integrate crops (farmer delight, ...).
 
 ## How this mod has been created
 
@@ -20,7 +20,8 @@ Doc :
 Go to https://fabricmc.net/develop/template/ and enter :    
 - crops xp
 - nodecount.crops_xp
-- 1.21.5
+- 1.21.1
+- Click on `Download Template` in order to download the template
 
 Official example :    
 - https://github.com/FabricMC/fabric-example-mod/
@@ -28,7 +29,14 @@ Official example :
 If you only want to watch the recommended versions of Fabric Loader, Yarn and Fabric API for the `gradle.properties` file corresponding to a Minecraft version :    
 - https://fabricmc.net/develop/
 
-### Modifying the template
+### Get the Forge template
+
+Go to https://files.minecraftforge.net/net/minecraftforge/forge/ :    
+- Click on version 1.21.1
+- Download on version 1.21.1
+- Click on `Mdk` in order to download the template
+
+### Modifying the templates
 
 Modify the project's `gradle.properties` file to change the `maven_group` and `archive_base_name` properties to match your mod's details.
 
