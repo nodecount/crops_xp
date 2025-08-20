@@ -6,7 +6,7 @@ This Minecraft mod runs with the Fabric and Forge modloaders.
 
 This mod allows you to gains XP when you harvest mature crops.
 
-It's a good alternative to kill monsters to win experience in Minecraft. Ideal for players that play in peaceful and also want to enchant their stuff.
+This is a good alternative to killing mobs to gain experience in Minecraft. Ideal for players who play in peaceful mode and still want to enchant their stuff.
 
 Works with other mods which integrate crops (farmer delight, ...).
 
