@@ -18,7 +18,7 @@ Doc :
 ### Get the Fabric template
 
 Go to https://fabricmc.net/develop/template/ and enter :    
-- crops xp
+- Crops XP
 - nodecount.crops_xp
 - 1.21.8
 - Check "Split client and common sources"
