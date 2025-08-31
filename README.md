@@ -51,8 +51,8 @@ Make sure to update the versions of Minecraft, the mappings, the Loader and the 
 
 ### Setting up a Development Environment 
 
-Installing JDK 21 :    
-- https://www.oracle.com/fr/java/technologies/downloads/#jdk21-windows
+Installing JDK 17 :    
+- https://www.oracle.com/fr/java/technologies/downloads/#jdk17-windows
 
 ### Run the mod
 
