@@ -20,7 +20,7 @@ Doc :
 Go to https://fabricmc.net/develop/template/ and enter :    
 - Crops XP
 - nodecount.crops_xp
-- 1.21.8
+- 1.21.9
 - Check "Split client and common sources"
 - Click on `Download Template`
 
@@ -33,8 +33,8 @@ If you only want to watch the recommended versions of Fabric Loader, Yarn and Fa
 ### Get the Forge template
 
 Go to https://files.minecraftforge.net/net/minecraftforge/forge/ :    
-- Click on version 1.21.8
-- Download on version 1.21.8
+- Click on version 1.21.9
+- Download on version 1.21.9
 - Click on `Mdk`
 
 ### Modifying the templates
@@ -49,6 +49,23 @@ More about the `fabric.mod.json` file :
 Make sure to update the versions of Minecraft, the mappings, the Loader and the Loom - all of which can be queried through https://fabricmc.net/develop/ - to match the versions you wish to target.
 
 ## How to run the mod and build it into a JAR file
+
+### Update Gradle wrapper
+
+Do :    
+```bash
+./gradlew wrapper
+```
+
+### Clean Gradle cache
+
+Do :    
+```bash
+./gradlew clean build --no-build-cache
+./gradlew --stop
+rmdir /s /q "%USERPROFILE%\.gradle\caches\fabric-loom"
+rmdir /s /q "F:\Minecraft\crops_xp\.gradle"
+```
 
 ### Setting up a Development Environment 
 
@@ -67,7 +84,7 @@ Do :
 
 Do :    
 ```bash
-./gradlew build
+./gradlew build --refresh-dependencies
 ```
 
 The generated JAR is here (no need to take the `xxx-sources.jar`) :
