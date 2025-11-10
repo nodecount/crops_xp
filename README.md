@@ -55,6 +55,7 @@ Make sure to update the versions of Minecraft, the mappings, the Loader and the 
 Do :    
 ```bash
 ./gradlew wrapper --gradle-version 8.12.1
+./gradlew wrapper --version
 ```
 
 ### Clean Gradle cache
