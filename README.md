@@ -50,19 +50,19 @@ Make sure to update the versions of Minecraft, the mappings, the Loader and the 
 
 ## How to run the mod and build it into a JAR file
 
-### Update Gradle wrapper
+### Upgrade Gradle wrapper
 
 Do :    
 ```bash
-./gradlew wrapper
+./gradlew wrapper --gradle-version 8.12.1
 ```
 
 ### Clean Gradle cache
 
 Do :    
 ```bash
-./gradlew clean build --no-build-cache
 ./gradlew --stop
+./gradlew clean
 rmdir /s /q "%USERPROFILE%\.gradle\caches\fabric-loom"
 rmdir /s /q "F:\Minecraft\crops_xp\.gradle"
 ```

@@ -121,6 +121,8 @@ print(f"\nChercher/remplacer de {old_version} vers {target_version} terminé")
 
 print(f"\nBuild du mod dans la nouvelle version {target_version}...")
 
+subprocess.run(["./gradlew", "--stop"], check=True)
+subprocess.run(["./gradlew", "clean"], check=True)
 subprocess.run(["./gradlew", "build --refresh-dependencies"], check=True)
 
 print(f"\nJAR du mod généré dans sous ./build/libs (ne pas prendre xxx-sources.jar)")
