@@ -3,22 +3,24 @@
 
 import requests
 import xml.etree.ElementTree as ET
+from pathlib import Path
 import subprocess
-# import os
+import sys
 
-target_version = input("Version Minecraft cible (ex: 1.21.9) : ").strip()
+target_version = input("Version Minecraft cible (ex: 1.21.10) : ").strip()
+actual_branch = subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"]).decode().strip()
+old_version = actual_branch
+new_branch = target_version
 
 #######################################
 ##  Création de la nouvelle branche  ##
 #######################################
 
-old_branch = subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"]).decode().strip()
-old_version = old_branch
+print(f"\nCréation de la branche {new_branch} basée sur l'actuelle {actual_branch}...")
 
-new_branch = target_version
 subprocess.run(["git", "checkout", "-b", new_branch], check=True)
 
-print(f"# Nouvelle branche créée : {new_branch}")
+print(f"# Nouvelle branche {new_branch} créée")
 
 #######################################################################
 ##  Mise à jour des versions des dépendances dans gradle.properties  ##
@@ -90,28 +92,21 @@ print(f"\nVersions des dépendances mises à jour dans le fichier")
 
 print(f"\nChercher/remplacer final des {old_version} restants en {target_version}...")
 
-# for root, dirs, files in os.walk("."):
-#     for file in files:
-#         path = os.path.join(root, file)
-#         # on ignore .git
-#         if ".git" in path:
-#             continue
-#         try:
-#             with open(path, "r", encoding="utf-8") as f:
-#                 content = f.read()
-#             if old_version in content:
-#                 content = content.replace(old_version, target_version)
-#                 with open(path, "w", encoding="utf-8") as f:
-#                     f.write(content)
-#         except:
-#             # on ignore les fichiers non textuels sans erreur
-#             pass
-
-subprocess.run(
-    f'git grep -l "{old_version}" | xargs sed -i "s/{old_version}/{target_version}/g"',
-    shell=True,
+result = subprocess.run(
+    ["git", "grep", "-l", old_version],
+    capture_output=True,
+    text=True,
     check=False
 )
+
+files = result.stdout.splitlines()
+
+for file_path in files:
+    path = Path(file_path)
+    if path.is_file():
+        content = path.read_text(encoding="utf-8")
+        new_content = content.replace(old_version, target_version)
+        path.write_text(new_content, encoding="utf-8")
 
 print(f"\nChercher/remplacer de {old_version} vers {target_version} terminé")
 
@@ -121,8 +116,23 @@ print(f"\nChercher/remplacer de {old_version} vers {target_version} terminé")
 
 print(f"\nBuild du mod dans la nouvelle version {target_version}...")
 
-subprocess.run(["./gradlew", "--stop"], check=True)
-subprocess.run(["./gradlew", "clean"], check=True)
-subprocess.run(["./gradlew", "build --refresh-dependencies"], check=True)
+gradlew = Path("gradlew.bat" if sys.platform.startswith("win") else "./gradlew")
+
+subprocess.run([str(gradlew), "--stop"], check=True)
+subprocess.run([str(gradlew), "clean"], check=True)
+subprocess.run([str(gradlew), "build --refresh-dependencies"], check=True)
 
 print(f"\nJAR du mod généré dans sous ./build/libs (ne pas prendre xxx-sources.jar)")
+
+############################################
+##  Commit & push de la nouvelle branche  ##
+############################################
+
+print(f"\nCommit & push de la nouvelle branche {new_branch}...")
+
+commit_msg = f"Update to {target_version}"
+
+subprocess.run(["git", "commit", "-m", commit_msg], check=True)
+subprocess.run(["git", "push", "-u", f"origin {new_branch}"], check=True)
+
+print(f"# Commit \"{commit_msg}\" et branche {new_branch} pushée")

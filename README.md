@@ -20,7 +20,7 @@ Doc :
 Go to https://fabricmc.net/develop/template/ and enter :    
 - Crops XP
 - nodecount.crops_xp
-- 1.21.9
+- 1.21.10
 - Check "Split client and common sources"
 - Click on `Download Template`
 
@@ -33,8 +33,8 @@ If you only want to watch the recommended versions of Fabric Loader, Yarn and Fa
 ### Get the Forge template
 
 Go to https://files.minecraftforge.net/net/minecraftforge/forge/ :    
-- Click on version 1.21.9
-- Download on version 1.21.9
+- Click on version 1.21.10
+- Download on version 1.21.10
 - Click on `Mdk`
 
 ### Modifying the templates
