@@ -54,9 +54,13 @@ Make sure to update the versions of Minecraft, the mappings, the Loader and the 
 
 Do :    
 ```bash
-./gradlew wrapper --gradle-version 8.12.1
+./gradlew wrapper --gradle-version 8.14
 ./gradlew wrapper --version
 ```
+
+> When you have to upgrade `fabric-loom` version, update first Gradle wrapper version
+> or you will get error `Failed to setup Minecraft, java.lang.UnsupportedOperationException: Unsupported unpick version`
+> In this case, come back on a functionnal version and upgra deGradle wrapper
 
 ### Clean Gradle cache
 
