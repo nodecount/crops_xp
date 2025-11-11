@@ -53,23 +53,22 @@ Make sure to update the versions of Minecraft, the mappings, the Loader and the 
 ### Upgrade Gradle wrapper
 
 Do :    
-```bash
+```powershell
 ./gradlew wrapper --gradle-version 8.14
 ./gradlew wrapper --version
 ```
 
-> When you have to upgrade `fabric-loom` version, update first Gradle wrapper version
+> When you have to upgrade `minecraft_version` and `fabric-loom` version, update first Gradle wrapper version
 > or you will get error `Failed to setup Minecraft, java.lang.UnsupportedOperationException: Unsupported unpick version`
-> In this case, come back on a functionnal version and upgra deGradle wrapper
+> In this case, come back on a functionnal version and upgrade Gradle wrapper
 
 ### Clean Gradle cache
 
 Do :    
-```bash
+```powershell
 ./gradlew --stop
 ./gradlew clean
-rmdir /s /q "%USERPROFILE%\.gradle\caches\fabric-loom"
-rmdir /s /q "F:\Minecraft\crops_xp\.gradle"
+Remove-Item ".gradle\loom-cache" -Recurse -Force
 ```
 
 ### Setting up a Development Environment 
@@ -80,7 +79,7 @@ Installing JDK 21 :
 ### Run the mod
 
 Do :    
-```bash
+```powershell
 ./gradlew runClient # Start the game in client mode
 ./gradlew runServer # Start the game in server mode
 ```
@@ -88,11 +87,11 @@ Do :
 ### Build the mod into a JAR file
 
 Do :    
-```bash
+```powershell
 ./gradlew build --refresh-dependencies
 ```
 
 The generated JAR is here (no need to take the `xxx-sources.jar`) :
-```bash
+```powershell
 cd build/libs
 ```

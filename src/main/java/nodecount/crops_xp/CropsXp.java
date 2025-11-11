@@ -20,7 +20,7 @@ public class CropsXp implements ModInitializer {
 		// Proceed with mild caution.
 
 		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
-			if (!world.isClient && state.getBlock() instanceof CropBlock cropBlock) {
+			if (!world.isClient() && state.getBlock() instanceof CropBlock cropBlock) {
 				if (cropBlock.isMature(state)) {
 					ServerWorld serverWorld = (ServerWorld) world;
 					int numberOfOrbs = world.getRandom().nextBetween(3, 4);
